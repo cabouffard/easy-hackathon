@@ -1,0 +1,10 @@
+- if @events.count > 0
+  .list-group
+    - @events.each do |event|
+      .list-group-item
+        h2.list-group-item-heading= event.title
+        p.list-group-item-text= event.description
+- else
+  = 'There are no events'
+
+= link_to('Create a new event', new_event_path, class: 'btn btn-primary')
