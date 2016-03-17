@@ -11,6 +11,7 @@ gem 'slim-rails'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'devise'
 gem 'simple_form'
+gem 'annotate'
 
 group :development, :test do
   gem 'byebug'
