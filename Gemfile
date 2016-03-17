@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'slim-rails'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
