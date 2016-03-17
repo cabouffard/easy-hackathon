@@ -4,6 +4,7 @@
       .list-group-item
         h2.list-group-item-heading= event.title
         p.list-group-item-text= event.description
+        = link_to('edit event', edit_event_path(event), class: 'btn btn-primary')
 - else
   = 'There are no events'
 
