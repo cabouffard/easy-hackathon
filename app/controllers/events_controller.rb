@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :find_event, only: [:edit, :destroy, :update]
+
   def index
     @events = Event.all
   end
@@ -11,8 +13,6 @@ class EventsController < ApplicationController
   end
 
   def edit
-    event_id = params[:id]
-    @event = Event.find(event_id)
   end
 
   def create
@@ -25,17 +25,13 @@ class EventsController < ApplicationController
     end
   end
 
-
-  def delete
-  end
-
   def destroy
+    @event.destroy
+    flash[:success] = 'You have succesfully deleted the entry!'
+    redirect_to events_path
   end
 
   def update
-    event_id = params[:id]
-    @event = Event.find(event_id)
-
     if @event.update(event_params)
       redirect_to events_path
     else
@@ -45,6 +41,11 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def find_event
+    event_id = params[:id]
+    @event = Event.find(event_id)
+  end
 
   def event_params
     params.require(:event).permit(:title, :description)
