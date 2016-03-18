@@ -27,7 +27,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    flash[:success] = 'You have succesfully deleted the entry!'
+    flash[:success] = t('events.destroy.success')
     redirect_to events_path
   end
 

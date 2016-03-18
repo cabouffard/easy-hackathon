@@ -1,0 +1,14 @@
+fr:
+  general:
+    title: 'EasyHackaton'
+
+  home:
+    title: 'Accueil'
+
+  events:
+    title: 'Événement'
+    destroy:
+      success: 'Vous avez supprimé une entrée avec succès'
+
+  locale:
+    switch_abbr: 'en'

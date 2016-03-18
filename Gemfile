@@ -12,6 +12,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'devise'
 gem 'simple_form'
 gem 'annotate'
+gem 'i18n'
 
 group :development, :test do
   gem 'byebug'

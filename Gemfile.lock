@@ -181,6 +181,7 @@ DEPENDENCIES
   byebug
   coffee-rails
   devise
+  i18n
   jquery-rails
   pg
   pry-rails
