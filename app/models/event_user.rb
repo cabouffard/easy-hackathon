@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: event_users
+#
+#  id       :integer          not null, primary key
+#  user_id  :integer
+#  event_id :integer
+#
+
 class EventUser < ActiveRecord::Base
   belongs_to :event
   belongs_to :user
