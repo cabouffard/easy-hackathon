@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   scope '(:locale)', locale: /(en|fr)/ do
-    resources :events
+    resources :events do
+      resources :registrations
+    end
   end
 
   get 'locale/switch/:locale', to: 'locale#switch', as: 'locale_switch'

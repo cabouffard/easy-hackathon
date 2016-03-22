@@ -6,6 +6,7 @@
         p.list-group-item-text= event.description
         = link_to('edit event', edit_event_path(event), class: 'btn btn-primary')
         = link_to('delete event', event_path(event),  method: :delete, class: 'btn btn-primary')
+        = link_to('add myself to event', event_registrations_path(event),  method: :post, class: 'btn btn-primary')
 - else
   = 'There are no events'
 
