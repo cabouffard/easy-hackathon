@@ -7,6 +7,10 @@ en:
 
   events:
     title: 'Events'
+    show_event: 'Show event'
+    edit_event: 'Edit event'
+    delete_event: 'Delete event'
+    participate_event: 'Participate to the event'
     destroy:
       success: 'You have successfully deleted an entry'
     durations:

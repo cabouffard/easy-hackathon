@@ -7,8 +7,16 @@ fr:
 
   events:
     title: 'Événement'
+    show_event: "Voir l'événement"
+    edit_event: "Modifier l'événement"
+    delete_event: "Supprimer l'événement"
+    participate_event: "Participer à l'événement"
     destroy:
       success: 'Vous avez supprimé une entrée avec succès'
+    durations:
+      12h: '12 Heures'
+      24h: '24 Heures'
+      48h: '48 Heures'
 
   locale:
     switch_abbr: 'en'
