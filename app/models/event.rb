@@ -8,6 +8,8 @@
 #  date        :datetime
 #  created_at  :datetime
 #  updated_at  :datetime
+#  duration    :string
+#  image       :string
 #
 
 class Event < ActiveRecord::Base
@@ -16,4 +18,6 @@ class Event < ActiveRecord::Base
 
   validates :title, presence: true
   validates :description, presence: true
+  validates :duration, presence: true
+  validates :date, presence: true
 end

@@ -9,6 +9,10 @@ en:
     title: 'Events'
     destroy:
       success: 'You have successfully deleted an entry'
+    durations:
+      12h: '12 Hours'
+      24h: '24 Hours'
+      48h: '48 Hours'
 
   locale:
     switch_abbr: 'fr'
