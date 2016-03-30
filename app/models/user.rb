@@ -26,7 +26,9 @@
 class User < ActiveRecord::Base
   include Humanize
   has_many :event_users
+  has_many :team_users
   has_many :events, through: :event_users
+  has_many :teams, through: :team_users
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

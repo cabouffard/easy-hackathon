@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323004623) do
+ActiveRecord::Schema.define(version: 20160330225708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,22 +33,23 @@ ActiveRecord::Schema.define(version: 20160323004623) do
     t.string   "image"
   end
 
-  create_table "events_users", id: false, force: :cascade do |t|
-    t.integer "event_id"
+  create_table "team_users", force: :cascade do |t|
+    t.integer "team_id"
     t.integer "user_id"
   end
 
-  add_index "events_users", ["event_id", "user_id"], name: "index_events_users_on_event_id_and_user_id", using: :btree
-  add_index "events_users", ["user_id"], name: "index_events_users_on_user_id", using: :btree
+  add_index "team_users", ["team_id", "user_id"], name: "index_team_users_on_team_id_and_user_id", using: :btree
 
   create_table "teams", force: :cascade do |t|
     t.integer "event_id"
     t.integer "admin_id"
-    t.string  "status",   default: "closed"
+    t.string  "status",        default: "closed"
     t.string  "name"
+    t.integer "team_users_id"
   end
 
   add_index "teams", ["admin_id"], name: "index_teams_on_admin_id", using: :btree
+  add_index "teams", ["team_users_id"], name: "index_teams_on_team_users_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

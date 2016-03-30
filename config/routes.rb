@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /(en|fr)/ do
     resources :events do
       resources :registrations
+      resources :teams
     end
   end
 
