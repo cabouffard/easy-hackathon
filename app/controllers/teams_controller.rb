@@ -13,10 +13,11 @@ class TeamsController < ApplicationController
   end
 
   def create
+    # TODO(cab): Investigate how they could be improved
     @team = Team.new(team_params)
     @team.admin = current_user
     @team.users << current_user
-    if @event.teams << @team
+    if @event.users << current_user && @event.teams << @team
       redirect_to event_path(@event)
     else
       flash[:error] = @team.errors.full_messages.first
