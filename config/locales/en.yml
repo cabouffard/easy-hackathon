@@ -18,5 +18,11 @@ en:
       24h: '24 Hours'
       48h: '48 Hours'
 
+  teams:
+    status:
+      closed: 'Closed'
+      open: 'Open'
+      private: 'Private'
+
   locale:
     switch_abbr: 'fr'

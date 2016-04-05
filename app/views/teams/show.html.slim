@@ -1,0 +1,21 @@
+h1.text-center.text-secondary= @team.title
+
+.col-md-12.well
+  .col-md-8
+    p= @team.description
+    p= fa_icon 'calendar', text: @team.date.strftime('%Y-%m-%d')
+    p= fa_icon 'clock-o', text: I18n.t("events.durations.#{@team.duration}")
+    p= fa_icon 'users', text: @team.users.count
+
+.col-md-6
+  h2= "Participants"
+  ul
+    - @team.users.each do |user|
+      li= user.full_name
+
+.col-md-6
+  h2= "Teams"
+  p= link_to('create new team', new_event_team_path(@team)) if current_user?
+  ul
+    - @team.teams.each do |team|
+      li= team.name

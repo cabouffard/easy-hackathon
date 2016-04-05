@@ -1,0 +1,5 @@
+= simple_form_for([@event, @team], html: { class: 'form-horizontal' }) do |f|
+  = f.input :name
+  = f.input :status, collection: status_list
+  = f.button :submit
+
