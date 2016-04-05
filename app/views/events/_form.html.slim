@@ -2,5 +2,6 @@
   = f.input :title
   = f.input :description
   = f.input :duration, collection: duration_list
+  = f.input :date, default: Date.current
   = f.button :submit
 

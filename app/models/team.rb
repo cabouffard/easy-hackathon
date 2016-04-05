@@ -14,8 +14,12 @@ class Team < ActiveRecord::Base
   belongs_to :event
 
   has_many :team_users
-  has_one :admin
+  belongs_to :admin, class_name: 'User', foreign_key: 'admin_id'
   has_many :users, through: :team_users
 
   validates :name, presence: true
+
+  def admin?(user)
+    admin == user
+  end
 end

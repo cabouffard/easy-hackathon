@@ -15,7 +15,8 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(team_params)
     @team.admin = current_user
-    if @team.save
+    @team.users << current_user
+    if @event.teams << @team
       redirect_to event_path(@event)
     else
       flash[:error] = @team.errors.full_messages.first
@@ -26,12 +27,12 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     flash[:success] = t('events.destroy.success')
-    redirect_to events_path
+    redirect_to event_path(@event)
   end
 
   def update
     if @team.update(team_params)
-      redirect_to events_path
+      redirect_to event_path(@event)
     else
       flash[:error] = @team.errors.full_messages.first
       render :edit
@@ -41,7 +42,7 @@ class TeamsController < ApplicationController
   private
 
   def find_team
-    team_id = params[:team_id]
+    team_id = params[:id]
     @team = Team.find(team_id)
   end
 
@@ -51,6 +52,6 @@ class TeamsController < ApplicationController
   end
 
   def team_params
-    params.require(:team).permit(:event_id, :status, :name)
+    params.require(:team).permit(:status, :name)
   end
 end

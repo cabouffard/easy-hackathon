@@ -18,4 +18,9 @@ h1.text-center.text-secondary= @team.title
   p= link_to('create new team', new_event_team_path(@team)) if current_user?
   ul
     - @team.teams.each do |team|
-      li= team.name
+      .col-md-6.well
+        .col-md-8
+          h2= team.name
+          = team.admin.name
+          - team.users.each do |user|
+            = user.name
