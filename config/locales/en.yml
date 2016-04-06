@@ -10,9 +10,10 @@ en:
     show_event: 'Show event'
     edit_event: 'Edit event'
     delete_event: 'Delete event'
-    participate_event: 'Participate to the event'
+    no_events: 'There are no events, please come back soon!'
     destroy:
       success: 'You have successfully deleted an entry'
+      confirm: 'Are you sure you want to delete this event? There is no way back!'
     durations:
       12h: '12 Hours'
       24h: '24 Hours'

@@ -10,11 +10,15 @@ $bootstrap-sass-asset-helper: false !default;
 
 // NOTE(cab): Color scheme:
 // https://coolors.co/app/05668d-028090-00a896-02c39a-f0f3bd
+$venice-blue: #05668d;
+$blue-lagoon: #028090;
+$persian-green: #00A896;
+$coconut-cream: #FCFBEE;
 
-$primary-color: #05668d;
-$secondary-color: #028090;
-$thirdly-color: #00a896;
-$light-text-color: #f0f3bd;
+$primary-color: $venice-blue;
+$secondary-color: $blue-lagoon;
+$thirdly-color: $persian-green;
+$light-text-color: $coconut-cream;
 $dark-text-color: $thirdly-color;
 
 $gray-base:              #000 !default;
@@ -162,9 +166,13 @@ $btn-default-color:              #333 !default;
 $btn-default-bg:                 #fff !default;
 $btn-default-border:             #ccc !default;
 
-$btn-primary-color:              #fff !default;
+$btn-primary-color:              $light-text-color !default;
 $btn-primary-bg:                 $brand-primary !default;
 $btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+
+$btn-secondary-color:            $light-text-color !default;
+$btn-secondary-bg:               $secondary-color !default;
+$btn-secondary-border:           darken($btn-secondary-bg, 5%) !default;
 
 $btn-success-color:              #fff !default;
 $btn-success-bg:                 $brand-success !default;
@@ -500,7 +508,7 @@ $pager-disabled-color:                 $pagination-disabled-color !default;
 
 $jumbotron-padding:              30px !default;
 $jumbotron-color:                inherit !default;
-$jumbotron-bg:                   $gray-lighter !default;
+$jumbotron-bg:                   $thirdly-color !default;
 $jumbotron-heading-color:        inherit !default;
 $jumbotron-font-size:            ceil(($font-size-base * 1.5)) !default;
 $jumbotron-heading-font-size:    ceil(($font-size-base * 4.5)) !default;

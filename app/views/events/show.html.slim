@@ -1,11 +1,14 @@
-h1.text-center.text-secondary= @event.title
+.row
+  h1.text-center.text-secondary= @event.title
 
-.col-md-12.well
-  .col-md-8
-    p= @event.description
-    p= fa_icon 'calendar', text: @event.date.strftime('%Y-%m-%d')
-    p= fa_icon 'clock-o', text: I18n.t("events.durations.#{@event.duration}")
-    p= fa_icon 'users', text: @event.users.count
+.row
+  .col-md-12
+    .col-md-8
+      p= @event.description
+      p= fa_icon 'calendar', text: @event.date.strftime('%Y-%m-%d')
+      p= fa_icon 'clock-o', text: I18n.t("events.durations.#{@event.duration}")
+      p= fa_icon 'user', text: @event.users.count
+      p= fa_icon 'users', text: @event.teams.count
 
 .col-md-6
   h2= "Participants"

@@ -1,0 +1,24 @@
+.event {
+  background-color: $secondary-color;
+
+  .event-image {
+    width: 100%;
+    min-height: 175px;
+    background-size: cover;
+  }
+
+  .event-content {
+    padding: 10px;
+    min-height: 150px;
+  }
+
+  .event-footer {
+    background-color: $thirdly-color;
+    padding: 0px 0px 0px 10px;
+    min-height: 50px;
+  }
+
+  .event-button {
+    display: inline-block;
+  }
+}
