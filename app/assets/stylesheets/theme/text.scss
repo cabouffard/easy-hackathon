@@ -1,0 +1,15 @@
+.text-hover-container {
+  position: relative;
+  float: left;
+}
+
+.text-hover-content {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  bottom: 5px;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+

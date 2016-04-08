@@ -6,7 +6,7 @@
   - if @events.count > 0
       - @events.each_with_index do |event, index|
         .col-md-4.col-spaced
-          .event
+          .event-container
             .event-image style="background-image: url('http://baconmockup.com/800/350')"
             .event-content.clearfix
               .event-date.pull-left= format_date(event.date)

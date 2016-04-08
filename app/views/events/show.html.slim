@@ -2,21 +2,40 @@
   h1.text-center.text-secondary= @event.title
 
 .row
-  .col-md-12
-    .col-md-8
-      p= @event.description
-      p= fa_icon 'calendar', text: @event.date.strftime('%Y-%m-%d')
-      p= fa_icon 'clock-o', text: I18n.t("events.durations.#{@event.duration}")
-      p= fa_icon 'user', text: @event.users.count
-      p= fa_icon 'users', text: @event.teams.count
+  .col-md-12.vertical-spaced
+    .bg-secondary.event-container
+      .event-content.clearfix
+        .col-md-6
+          p= @event.description
+          p= fa_icon 'calendar', text: @event.date.strftime('%Y-%m-%d')
+          p= fa_icon 'clock-o', text: I18n.t("events.durations.#{@event.duration}")
+          p= fa_icon 'user', text: @event.users.count
+          p= fa_icon 'users', text: @event.teams.count
+        .col-md-6
+          .event-image style="background-image: url('http://baconmockup.com/800/350')"
 
 .col-md-6
   h2= "Participants"
-  ul
-    - @event.users.each do |user|
-      li= user.full_name
+  ul.list-unstyled.list-inline
+    /- @event.users.each do |user|
+    - 10.times do |user|
+      li.vertical-spaced--small.text-hover-container
+        = image_tag('http://baconmockup.com/100/100/')
+        span.text-hover-content= 'Charles-Andre'
 
 .col-md-6
   h2= "Teams"
-  p= link_to('create new team', new_event_team_path(@event)) if current_user.present?
-  = render @event.teams
+  .team-container
+    - 10.times do |team|
+      .row.bg-secondary.vertical-spaced
+        .col-md-4
+          h4.team-name= 'This is my team name'
+          .team-status= 'Status: Open'
+          .team-status= "#{10} members"
+        .col-md-8
+          ul.list-unstyled.list-inline.text-right
+            li.vertical-spaced--small
+              = link_to(fa_icon('plus', class: 'fa-2x'), new_event_path, class: 'btn btn-secondary item-vertical')
+            - 10.times do |user|
+                li.vertical-spaced--small
+                  = image_tag('http://baconmockup.com/50/50/')
