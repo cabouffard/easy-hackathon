@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /(en|fr)/ do
     resources :events do
-      resources :registrations
-      resources :teams
+      resources :registrations, controller: 'events_users'
+      resources :teams do
+        resources :registrations, controller: 'teams_users'
+      end
     end
   end
 

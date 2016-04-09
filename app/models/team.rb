@@ -22,4 +22,8 @@ class Team < ActiveRecord::Base
   def admin?(user)
     admin == user
   end
+
+  def member_count
+    users.count
+  end
 end

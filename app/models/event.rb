@@ -21,4 +21,12 @@ class Event < ActiveRecord::Base
   validates :description, presence: true
   validates :duration, presence: true
   validates :date, presence: true
+
+  def participant_count
+    users.count
+  end
+
+  def team_count
+    teams.count
+  end
 end

@@ -11,6 +11,8 @@ en:
     edit_event: 'Edit event'
     delete_event: 'Delete event'
     no_events: 'There are no events, please come back soon!'
+    participant_count: 'Participants (%{count})'
+    team_count: 'Teams (%{count})'
     destroy:
       success: 'You have successfully deleted an entry'
       confirm: 'Are you sure you want to delete this event? There is no way back!'
@@ -20,6 +22,8 @@ en:
       48h: '48 Hours'
 
   teams:
+    create_team: 'Create a new team'
+    full_status: 'Status: %{status}'
     status:
       closed: 'Closed'
       open: 'Open'

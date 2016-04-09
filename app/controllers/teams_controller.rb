@@ -17,7 +17,8 @@ class TeamsController < ApplicationController
     @team = Team.new(team_params)
     @team.admin = current_user
     @team.users << current_user
-    if @event.users << current_user && @event.teams << @team
+    @event.users << current_user unless @event.users.find(current_user)
+    if @event.teams << @team
       redirect_to event_path(@event)
     else
       flash[:error] = @team.errors.full_messages.first

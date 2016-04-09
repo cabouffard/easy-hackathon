@@ -6,41 +6,43 @@
     .bg-secondary.event-container
       .event-content.clearfix
         .col-md-6
-          p= @event.description
           p= fa_icon 'calendar', text: @event.date.strftime('%Y-%m-%d')
           p= fa_icon 'clock-o', text: I18n.t("events.durations.#{@event.duration}")
-          p= fa_icon 'user', text: @event.users.count
-          p= fa_icon 'users', text: @event.teams.count
         .col-md-6
           .event-image style="background-image: url('http://baconmockup.com/800/350')"
 
 .col-md-6
-  h2= "Participants"
-  ul.list-unstyled.list-inline
-    li.vertical-spaced--small.event-add--participant= link_to(fa_icon('plus', class: 'fa-2x'), new_event_path, class: 'btn btn-secondary item-vertical--large')
-    /- @event.users.each do |user|
-    - 10.times do |user|
-      li.vertical-spaced--small.text-hover-container
-        = image_tag(default_avatar_url(user))
-        span.text-hover-content= "Charles-Andre Bouffard"
+  .row
+    h2= "description"
+    p= "Proin semper ex non elit varius, quis dapibus dolor imperdiet. Quisque lobortis ultrices libero at vehicula. Morbi diam nulla, vulputate in aliquam quis, ultrices eu libero. Cras risus tortor, dignissim ut ante a, scelerisque consequat orci. Nulla erat lectus, pellentesque non nunc eu, sodales accumsan arcu. Aenean eu enim ante. Aenean scelerisque diam ac sem dapibus euismod. Integer a erat pellentesque, gravida orci vel, tincidunt ante. Vestibulum vehicula at nunc vel lobortis. Proin non dui faucibus, pretium turpis ac, dapibus elit. Fusce imperdiet lacinia varius. Integer cursus, lacus congue pulvinar interdum, tellus diam aliquam est, a viverra risus magna nec orci. Suspendisse vehicula sollicitudin lobortis."
 
 .col-md-6
-  h2= "Teams"
-  .team-container
-    .row.bg-secondary.vertical-spaced
-      .team-banner--add
-        = link_to(fa_icon('plus', class: 'fa-2x'), new_event_path, class: 'btn btn-secondary item-vertical')
-    - 10.times do |team|
+  .row
+    h2= t('events.participant_count', count: @event.participant_count)
+    ul.list-unstyled.list-inline
+      li.vertical-spaced--small.event-add--participant= link_to(fa_icon('plus', class: 'fa-2x'), event_registrations_path(@event.id), method: :post, class: 'btn btn-secondary item-vertical--large')
+      - @event.users.each do |user|
+        li.vertical-spaced--small.text-hover-container
+          = image_tag(default_avatar_url(user.full_name))
+          span.text-hover-content= user.full_name
+
+  .row
+    h2= t('events.team_count', count: @event.team_count)
+    .team-container
       .row.bg-secondary.vertical-spaced
-        .team-banner
-          .col-md-4
-            h4.team-name= 'This is my team name'
-            .team-status= 'Status: Open'
-            .team-status= "#{10} members"
-          .col-md-8
-            ul.list-unstyled.list-inline.text-right
-              li.vertical-spaced--small
-                = link_to(fa_icon('plus', class: 'fa-2x'), new_event_path, class: 'btn btn-secondary item-vertical')
-              - 11.times do |user|
-                li.vertical-spaced--small(data={ toggle: 'tooltip', placement: 'top'} title="#{user}")
-                  = image_tag(default_avatar_url(user, 50))
+        .team-banner--add
+          = link_to(fa_icon('plus', class: 'fa-2x'), new_event_team_path(@event), class: 'btn btn-secondary item-vertical')
+      - @event.teams.each do |team|
+        .row.bg-secondary.vertical-spaced
+          .team-banner
+            .col-md-4
+              h4.team-name= team.name
+              .team-status= t('teams.full_status', status: t("teams.status.#{team.status}"))
+              .team-members-count= fa_icon 'users', text: team.member_count
+            .col-md-8
+              ul.list-unstyled.list-inline.text-right
+                li.vertical-spaced--small
+                  = link_to(fa_icon('plus', class: 'fa-2x'), event_team_registrations_path(event_id: @event.id, team_id: team.id), method: :post, class: 'btn btn-secondary item-vertical')
+                - team.users.each do |user|
+                  li.vertical-spaced--small(data={ toggle: 'tooltip', placement: 'top'} title="#{user.full_name}")
+                    = image_tag(default_avatar_url(user.full_name, 50))
