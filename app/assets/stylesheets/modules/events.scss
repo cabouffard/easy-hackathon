@@ -22,3 +22,14 @@
 .event-button {
   display: inline-block;
 }
+
+.event-add--participant {
+  position: relative;
+  // width: 100px;
+  // height: 100px;
+
+  .btn {
+    width: 100px;
+    height: 100px;
+  }
+}

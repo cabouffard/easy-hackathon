@@ -17,25 +17,30 @@
 .col-md-6
   h2= "Participants"
   ul.list-unstyled.list-inline
+    li.vertical-spaced--small.event-add--participant= link_to(fa_icon('plus', class: 'fa-2x'), new_event_path, class: 'btn btn-secondary item-vertical--large')
     /- @event.users.each do |user|
     - 10.times do |user|
       li.vertical-spaced--small.text-hover-container
-        = image_tag('http://baconmockup.com/100/100/')
-        span.text-hover-content= 'Charles-Andre'
+        = image_tag(default_avatar_url(user))
+        span.text-hover-content= "Charles-Andre Bouffard"
 
 .col-md-6
   h2= "Teams"
   .team-container
+    .row.bg-secondary.vertical-spaced
+      .team-banner--add
+        = link_to(fa_icon('plus', class: 'fa-2x'), new_event_path, class: 'btn btn-secondary item-vertical')
     - 10.times do |team|
       .row.bg-secondary.vertical-spaced
-        .col-md-4
-          h4.team-name= 'This is my team name'
-          .team-status= 'Status: Open'
-          .team-status= "#{10} members"
-        .col-md-8
-          ul.list-unstyled.list-inline.text-right
-            li.vertical-spaced--small
-              = link_to(fa_icon('plus', class: 'fa-2x'), new_event_path, class: 'btn btn-secondary item-vertical')
-            - 10.times do |user|
-                li.vertical-spaced--small
-                  = image_tag('http://baconmockup.com/50/50/')
+        .team-banner
+          .col-md-4
+            h4.team-name= 'This is my team name'
+            .team-status= 'Status: Open'
+            .team-status= "#{10} members"
+          .col-md-8
+            ul.list-unstyled.list-inline.text-right
+              li.vertical-spaced--small
+                = link_to(fa_icon('plus', class: 'fa-2x'), new_event_path, class: 'btn btn-secondary item-vertical')
+              - 11.times do |user|
+                li.vertical-spaced--small(data={ toggle: 'tooltip', placement: 'top'} title="#{user}")
+                  = image_tag(default_avatar_url(user, 50))
