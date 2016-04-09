@@ -17,7 +17,7 @@ class TeamsController < ApplicationController
     @team = Team.new(team_params)
     @team.admin = current_user
     @team.users << current_user
-    @event.users << current_user unless @event.users.find(current_user)
+    @event.users << current_user unless @event.users.find_by(id: current_user.id)
     if @event.teams << @team
       redirect_to event_path(@event)
     else
