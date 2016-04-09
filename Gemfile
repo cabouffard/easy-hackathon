@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'annotate'
 gem 'i18n'
 gem 'font-awesome-rails'
+gem 'redactor-rails'
 
 group :development, :test do
   gem 'byebug'

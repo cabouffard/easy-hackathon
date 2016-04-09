@@ -12,7 +12,7 @@
               .event-date.pull-left= format_date(event.date)
               .event-duration.pull-right= fa_icon 'clock-o', text: I18n.t("events.durations.#{event.duration}")
               h2.event-title= event.title
-              p.event-description= event.description
+              p.event-description= simple_format(truncate(event.introduction, length: 200))
 
             .event-footer
               ul.list-unstyled.list-inline.list-vertical.pull-left
