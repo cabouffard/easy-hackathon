@@ -1,0 +1,9 @@
+.row
+  .col-md-12.vertical-spaced
+    .bg-secondary.event-container
+      .event-content.clearfix
+        .col-md-6
+          = render partial: 'general_info', locals: { event: @event }
+        .col-md-6
+          .event-image style="background-image: url('http://baconmockup.com/800/350')"
+
