@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   scope '(:locale)', locale: /(en|fr)/ do
+    resources :users, only: :show
+
     resources :events do
       resources :registrations, controller: 'events_users'
       resources :teams do

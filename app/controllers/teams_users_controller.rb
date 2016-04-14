@@ -4,7 +4,7 @@ class TeamsUsersController < ApplicationController
 
   def create
     @team.users << current_user
-    @event.users << current_user unless @event.users.find(current_user)
+    @event.users << current_user unless @event.users.find_by(id: current_user.id)
     if @team.save
       redirect_to :back
     else

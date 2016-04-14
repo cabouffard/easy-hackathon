@@ -18,6 +18,8 @@ class Event < ActiveRecord::Base
   has_many :users, through: :event_users
   has_many :teams
 
+  scope :order_by_date, -> { order('date DESC') }
+
   validates :title, presence: true
   validates :introduction, presence: true
   validates :description, presence: true
