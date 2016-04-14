@@ -2,7 +2,7 @@
   = link_to(fa_icon('plus', class: 'fa-5x'), new_event_path, class: 'btn btn-secondary')
 .row
   .col-md-12
-    h1.text-secondary= I18n.t('events.title')
+    h1= I18n.t('events.title')
   - if @events.count > 0
       - @events.each_with_index do |event, index|
         .col-md-4.col-spaced
@@ -21,7 +21,7 @@
 
               ul.list-unstyled.list-inline.list-bordered.pull-right
                 = link_to edit_event_path(event), class: 'item-vertical event-button' do
-                  li.text-center.text-primary= fa_icon('pencil')
+                  li.text-center= fa_icon('pencil')
                 = link_to event_path(event), method: :delete, data: { confirm: I18n.t('events.destroy.confirm') }, class: 'item-vertical event-button' do
                   li.text-center.text-danger= fa_icon('trash')
                 = link_to event_path(event), class: 'item-vertical event-button' do

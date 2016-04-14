@@ -8,18 +8,30 @@ $bootstrap-sass-asset-helper: false !default;
 //
 //## Gray and brand colors for use across Bootstrap.
 
-// NOTE(cab): Color scheme:
-// https://coolors.co/app/05668d-028090-00a896-02c39a-f0f3bd
+$white: #FFFFFF;
+
+// NOTE(cab): Color Scheme 1
 $venice-blue: #05668d;
 $blue-lagoon: #028090;
 $persian-green: #00A896;
 $coconut-cream: #FCFBEE;
 
-$primary-color: $venice-blue;
-$secondary-color: $blue-lagoon;
-$thirdly-color: $persian-green;
-$light-text-color: $coconut-cream;
-$dark-text-color: $thirdly-color;
+// NOTE(cab): Color Scheme 2
+$dodger-blue: #2196F3;
+$denim: #1976D2;
+$sail: #BBDEFB;
+$gorse: #FFEB3B;
+$nobel: #B6B6B6;
+$mine-shaft: #212121;
+$dove-gray: #727272;
+
+$primary-color: $dodger-blue;
+$secondary-color: $denim;
+$thirdly-color: $sail;
+$light-text-color: $white;
+$dark-text-color: $mine-shaft;
+$divider-color: $nobel;
+$accent-color: $gorse;
 
 $gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
@@ -34,15 +46,13 @@ $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
 
+$body-bg:               $white !default;
+$text-color:            $dark-text-color !default;
+$headings-color:        inherit !default;
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
-
-//** Background color for `<body>`.
-$body-bg:               $primary-color !default;
-//** Global text color on `<body>`.
-$text-color:            $light-text-color !default;
 
 //** Global textual link color.
 $link-color:            $light-text-color !default;
@@ -82,8 +92,6 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 $headings-font-family:    inherit !default;
 $headings-font-weight:    500 !default;
 $headings-line-height:    1.1 !default;
-$headings-color:          inherit !default;
-
 
 //== Iconography
 //
