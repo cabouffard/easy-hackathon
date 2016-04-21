@@ -15,6 +15,7 @@ gem 'annotate'
 gem 'i18n'
 gem 'font-awesome-rails'
 gem 'redactor-rails'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug'
