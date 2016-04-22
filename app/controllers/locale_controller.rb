@@ -11,6 +11,8 @@ class LocaleController < ApplicationController
       cookies.permanent.signed[:locale] = locale
     end
 
+    # TODO(cab): Figure out how to change the locale of the URL, right now it
+    # redirect to the same "locale" url but with a different locale
     redirect_to :back
   end
 end

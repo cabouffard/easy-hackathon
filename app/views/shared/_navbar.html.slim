@@ -1,16 +1,15 @@
 nav.navbar.navbar-default
   .container-fluid
     .nav.navbar-nav.navbar-left
-      a.navbar-brand href="#"= t('general.title')
+      = link_to(t('general.title'), root_path, class: 'navbar-brand')
       ul.nav.navbar-nav
         li.nav-item.active
-          a.nav-link href="#"= t('home.title')
+          = link_to(t('home.title'), root_path, class: 'nav-link', data: { redirect_to: 'homepage' })
         li.nav-item
-          a.nav-link href="#"= t('events.title')
+          = link_to(t('events.title'), events_path, class: 'nav-link', data: { redirect_to: 'events' })
     .nav.navbar-nav.navbar-right
       ul.nav.navbar-nav
-        li.nav-item
-          a.nav-link href="#"= locale_toggle
+        li.nav-item= locale_toggle
         li.nav-item
           - if user_signed_in?
             a.nav-link href="#"= link_to('Sign out', destroy_user_session_path, method: :delete)

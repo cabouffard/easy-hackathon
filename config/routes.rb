@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'home#index'
 
   scope '(:locale)', locale: /(en|fr)/ do
+    root 'home#index'
     resources :users, only: :show
 
     resources :events do
