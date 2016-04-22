@@ -3,9 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = []
-    50.times do
-      @events = @events + Event.all
-    end
+    @events = @events + Event.all
   end
 
   def show
