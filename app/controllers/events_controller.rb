@@ -2,8 +2,7 @@ class EventsController < ApplicationController
   before_filter :find_event, only: [:edit, :destroy, :update, :show]
 
   def index
-    @events = []
-    @events = @events + Event.all
+    @events = Event.all
   end
 
   def show
