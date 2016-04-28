@@ -15,6 +15,8 @@ gem 'annotate'
 gem 'i18n'
 gem 'font-awesome-rails'
 gem 'redactor-rails'
+gem 'webpack-rails'
+gem 'foreman'
 
 group :development, :test do
   gem 'byebug'
