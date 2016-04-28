@@ -1,4 +1,5 @@
-body {
-  background-color: pink;
-}
+/** @define ComponentName */
 
+body {
+  background-color: red;
+}

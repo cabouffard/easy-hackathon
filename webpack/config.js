@@ -8,8 +8,10 @@ var StatsPlugin = require('stats-webpack-plugin');
 
 // NOTE(cab): postcss shizzle
 var precss       = require('precss');
+var atImport = require('postcss-import');
 var autoprefixer = require('autoprefixer');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var bemLinter = require('postcss-bem-linter');
+var reporter = require('postcss-reporter');
 
 // must match config.webpack.dev_server.port
 var devServerPort = 3808;
@@ -36,7 +38,6 @@ var config = {
   },
 
   resolve: {
-    extensions ['.js', '.css'],
     root: path.join(__dirname, '..', 'webpack')
   },
 
@@ -44,12 +45,12 @@ var config = {
     loaders: [
     {
       test:   /\.css$/,
-      loader: ExtractTextPlugin.extract("style-loader", "css-loader", "postcss-loader")
+      loader: "style-loader!css-loader!postcss-loader"
     }
     ]
   },
-  postcss: function() {
-    return [precss, autoprefixer];
+  postcss: function(webpack) {
+    return [atImport({ addDependencyTo: webpack }), precss, autoprefixer, bemLinter('bem'), reporter];
   },
 
   plugins: [
@@ -62,7 +63,6 @@ var config = {
       modules: false,
       assets: true
     }),
-    new ExtractTextPlugin("[name].css")
   ]
 };
 
@@ -82,7 +82,7 @@ if (production) {
 } else {
   config.devServer = {
     port: devServerPort,
-    headers: { 'Access-Control-Allow-Origin': '*' }
+    headers: { 'Access-Control-Allow-Origin': '*' },
   };
   config.output.publicPath = '//localhost:' + devServerPort + '/webpack/';
   // Source maps
