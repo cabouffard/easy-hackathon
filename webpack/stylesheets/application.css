@@ -1,1 +1,27 @@
-@import './test.css';
+/*------------------------------------*\
+    #THEME
+\*------------------------------------*/
+@import './themes/theme1.css';
+@import '../../node_modules/flexboxgrid/css/flexboxgrid.css';
+@import './resets/button.css';
+
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+@import './base/body.css';
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+@import "./components/box.css";
+@import "./components/list.css";
+@import "./components/button.css";
+
+
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
+}

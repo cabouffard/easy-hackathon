@@ -1,0 +1,25 @@
+/** @define box */
+
+.box {
+  background-color: $box-bg;
+  color: $box-color;
+}
+
+.box__header {
+  min-height: 175px;
+}
+
+.box__header--image {
+  background-size: cover;
+}
+
+.box__content {
+  padding: 10px;
+  min-height: 150px;
+}
+
+.box__footer {
+  background-color: $box-footer-bg;
+  height: 50px;
+}
+

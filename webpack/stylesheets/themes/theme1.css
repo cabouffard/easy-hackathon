@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    #COLORS
+\*------------------------------------*/
+$venice-blue: #05668d;
+$blue-lagoon: #028090;
+$persian-green: #00A896;
+$coconut-cream: #FCFBEE;
+
+$white: white;
+
+
+/*------------------------------------*\
+    #STYLES
+\*------------------------------------*/
+$light-color: $coconut-cream;
+$dark-color: $thirdly-color;
+
+$primary-color: $venice-blue;
+$secondary-color: $blue-lagoon;
+$thirdly-color: $persian-green;
+
+$body-bg: $primary-color;
+
+$box-bg: $secondary-color;
+$box-color: $light-color;
+$box-footer-bg: $thirdly-color;
+
+$button-border: $primary-color;

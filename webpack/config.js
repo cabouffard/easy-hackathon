@@ -12,6 +12,7 @@ var atImport = require('postcss-import');
 var autoprefixer = require('autoprefixer');
 var bemLinter = require('postcss-bem-linter');
 var reporter = require('postcss-reporter');
+var stylelint = require("stylelint")
 
 // must match config.webpack.dev_server.port
 var devServerPort = 3808;

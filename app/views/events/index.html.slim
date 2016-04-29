@@ -1,30 +1,52 @@
-.row.text-center
-  = link_to(fa_icon('plus', class: 'fa-5x'), new_event_path, class: 'btn btn-secondary')
+/.row.text-center
+/  = link_to(fa_icon('plus', class: 'fa-5x'), new_event_path, class: 'btn btn-secondary')
+/.row
+/  .col-md-12
+/    h1.text-secondary= I18n.t('events.title')
+/  - if @events.count > 0
+/      - @events.each_with_index do |event, index|
+/        .col-md-4.col-spaced
+/          .event-container
+/            .event-image style="background-image: url('http://baconmockup.com/800/350')"
+/            .event-content.clearfix
+/              .event-date.pull-left= format_date(event.date)
+/              .event-duration.pull-right= fa_icon 'clock-o', text: I18n.t("events.durations.#{event.duration}")
+/              h2.event-title= event.title
+/              p.event-description= simple_format(truncate(event.introduction, length: 200))
+/
+/            .event-footer
+/              ul.list-unstyled.list-inline.list-vertical.pull-left
+/                li= fa_icon 'user', text: event.users.count
+/                li= fa_icon 'users', text: event.teams.count
+/
+/              ul.list-unstyled.list-inline.list-bordered.pull-right
+/                = link_to edit_event_path(event), class: 'item-vertical event-button' do
+/                  li.text-center.text-primary= fa_icon('pencil')
+/                = link_to event_path(event), method: :delete, data: { confirm: I18n.t('events.destroy.confirm') }, class: 'item-vertical event-button' do
+/                  li.text-center.text-danger= fa_icon('trash')
+/                = link_to event_path(event), class: 'item-vertical event-button' do
+/                  li.text-center= fa_icon('info')
+/  - else
+/    = I18n.t('events.no_events')
+
 .row
-  .col-md-12
-    h1.text-secondary= I18n.t('events.title')
-  - if @events.count > 0
-      - @events.each_with_index do |event, index|
-        .col-md-4.col-spaced
-          .event-container
-            .event-image style="background-image: url('http://baconmockup.com/800/350')"
-            .event-content.clearfix
-              .event-date.pull-left= format_date(event.date)
-              .event-duration.pull-right= fa_icon 'clock-o', text: I18n.t("events.durations.#{event.duration}")
-              h2.event-title= event.title
-              p.event-description= simple_format(truncate(event.introduction, length: 200))
-
-            .event-footer
-              ul.list-unstyled.list-inline.list-vertical.pull-left
-                li= fa_icon 'user', text: event.users.count
-                li= fa_icon 'users', text: event.teams.count
-
-              ul.list-unstyled.list-inline.list-bordered.pull-right
-                = link_to edit_event_path(event), class: 'item-vertical event-button' do
-                  li.text-center.text-primary= fa_icon('pencil')
-                = link_to event_path(event), method: :delete, data: { confirm: I18n.t('events.destroy.confirm') }, class: 'item-vertical event-button' do
-                  li.text-center.text-danger= fa_icon('trash')
-                = link_to event_path(event), class: 'item-vertical event-button' do
-                  li.text-center= fa_icon('info')
-  - else
-    = I18n.t('events.no_events')
+  .col-md-4
+    .box
+      .box__header.box__header--image style="background-image: url('http://baconmockup.com/800/350')"
+      .box__content
+        = 'lorem'
+      .box__footer
+        ul.list.list--unstyled.left
+          = link_to('test') do
+            li.list__item--inline
+              button.button__flat= 'X'
+          = link_to('test') do
+            li.list__item--inline
+              button.button__flat= 'W'
+        ul.list.list--unstyled.right
+          = link_to('test') do
+            li.list__item--inline
+              button.button__flat.button--border-a= 'X'
+          = link_to('test') do
+            li.list__item--inline
+              button.button__flat.button--border-a= 'W'
