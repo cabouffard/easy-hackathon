@@ -1,19 +1,17 @@
-nav.navbar.navbar-default
-  .container-fluid
-    .nav.navbar-nav.navbar-left
-      a.navbar-brand href="#"= t('general.title')
-      ul.nav.navbar-nav
-        li.nav-item.active
-          a.nav-link href="#"= t('home.title')
-        li.nav-item
-          a.nav-link href="#"= t('events.title')
-    .nav.navbar-nav.navbar-right
-      ul.nav.navbar-nav
-        li.nav-item
-          a.nav-link href="#"= locale_toggle
-        li.nav-item
-          - if user_signed_in?
-            a.nav-link href="#"= link_to('Sign out', destroy_user_session_path, method: :delete)
-          - else
-            a.nav-link href="#"= link_to('register', new_user_registration_path)
-            a.nav-link href="#"= link_to('Sign in', new_user_session_path)
+nav.navbar.u-clearfix
+  ul.list.list--unstyled.navbar__section.u-left
+    = link_to root_path do
+      li.list__item--inline.navbar__item= t('general.title')
+    li.list__item--inline.navbar__item= t('home.title')
+    li.list__item--inline.navbar__item= t('events.title')
+
+  ul.list.list--unstyled.navbar__section.u-right
+    - if user_signed_in?
+      = link_to(destroy_user_session_path, method: :delete) do
+        li.list__item--inline.navbar__item= 'Sign out'
+    - else
+      = link_to(new_user_registration_path) do
+        li.list__item--inline.navbar__item= 'register'
+      = link_to(new_user_session_path) do
+        li.list__item--inline.navbar__item= 'Sign in'
+    li.list__item--inline.navbar__item= locale_toggle

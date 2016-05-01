@@ -4,6 +4,7 @@ button {
   border: 0;
   background: transparent;
   font-family: inherit;
+  color: inherit;
   font-size: 1em;
   cursor: pointer;
 }

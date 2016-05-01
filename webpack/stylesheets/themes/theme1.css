@@ -1,17 +1,16 @@
-/*------------------------------------*\
-    #COLORS
-\*------------------------------------*/
+/* ------------------------------------ *\
+     #COLORS
+\* ------------------------------------ */
 $venice-blue: #05668d;
 $blue-lagoon: #028090;
-$persian-green: #00A896;
-$coconut-cream: #FCFBEE;
+$persian-green: #00a896;
+$coconut-cream: #fcfbee;
 
 $white: white;
 
-
-/*------------------------------------*\
-    #STYLES
-\*------------------------------------*/
+/* ------------------------------------ *\
+     #COLORS-STYLES
+\* ------------------------------------ */
 $light-color: $coconut-cream;
 $dark-color: $thirdly-color;
 
@@ -20,9 +19,23 @@ $secondary-color: $blue-lagoon;
 $thirdly-color: $persian-green;
 
 $body-bg: $primary-color;
+$body-color: $light-color;
 
 $box-bg: $secondary-color;
 $box-color: $light-color;
 $box-footer-bg: $thirdly-color;
 
+$button-color: $light-color;
 $button-border: $primary-color;
+
+$navbar-bg: $thirdly-color;
+
+/* ------------------------------------ *\
+     #SPACING
+\* ------------------------------------ */
+$grid-default-padding: 1em;
+
+/* ------------------------------------ *\
+     #GUTTERS
+\* ------------------------------------ */
+$small-gutter: 1em;

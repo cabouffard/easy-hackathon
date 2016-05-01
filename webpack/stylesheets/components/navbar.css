@@ -1,0 +1,10 @@
+/** @define navbar */
+
+.navbar {
+  background-color: $navbar-bg;
+}
+
+.navbar__item {
+  display: inline-block;
+  padding: 15px 20px;
+}

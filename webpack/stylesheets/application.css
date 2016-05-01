@@ -6,33 +6,28 @@
      #RESETS
 \* ------------------------------------ */
 @import './resets/button.css';
-
-/* ------------------------------------ *\
-     #BASE
-\* ------------------------------------ */
-/* @import './base/body.css'; */
+@import './resets/body.css';
 
 /* ------------------------------------ *\
      #THEME
 \* ------------------------------------ */
-/* @import './themes/theme1.css'; */
-/* @import './resets/button.css'; */
+@import './themes/theme1.css';
+
+/* ------------------------------------ *\
+     #BASE
+\* ------------------------------------ */
+@import './base/body.css';
 
 /* ------------------------------------ *\
      #UTILITIES
 \* ------------------------------------ */
 @import './utilities/visual.css';
+@import './utilities/grid.css';
 
 /* ------------------------------------ *\
      #COMPONENTS
 \* ------------------------------------ */
 @import "./components/box.css";
-/* @import "./components/list.css"; */
-/* @import "./components/button.css"; */
-
-
-
-
-/* body { */
-/*   color: #4f; */
-/* } */
+@import "./components/list.css";
+@import "./components/button.css";
+@import "./components/navbar.css";

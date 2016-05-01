@@ -10,11 +10,3 @@
 .button--border-a {
   border-left: 2px dashed $button-border;
 }
-
-.list--unstyled {
-  list-style: none;
-}
-
-.list__item--inline {
-  display: inline-block;
-}

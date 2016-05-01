@@ -51,7 +51,7 @@ var config = {
     ]
   },
   postcss: function(webpack) {
-    return [atImport({ addDependencyTo: webpack, plugins: [ stylelint ] }), precss, autoprefixer, reporter]
+    return [atImport({ addDependencyTo: webpack, plugins: [ stylelint ] }), precss, autoprefixer, reporter({ clearMessages: true })]
   },
 
   plugins: [

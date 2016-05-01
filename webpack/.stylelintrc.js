@@ -14,6 +14,13 @@ module.exports = {
     "property-no-vendor-prefix": true,
     "media-feature-name-no-vendor-prefix": true,
 
+    "selector-no-id": true,
+
+    "property-unit-whitelist": {
+      "font-size": ["em"],
+      "/^animation/": ["s"]
+    },
+
     "selector-bem-pattern": {
       "preset": "bem",
       "utilitySelectors": "^\.u-[a-z]+$",
