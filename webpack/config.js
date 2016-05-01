@@ -23,8 +23,8 @@ var production = process.env.TARGET === 'production';
 var config = {
   entry: {
     // Sources are expected to live in $app_root/webpack
-    javascript: './webpack/javascripts/application.js',
-    stylesheet: './webpack/stylesheets/application.css'
+    javascript: './javascripts/application.js',
+    stylesheet: './stylesheets/application.css'
   },
 
   output: {
@@ -51,7 +51,7 @@ var config = {
     ]
   },
   postcss: function(webpack) {
-    return [atImport({ addDependencyTo: webpack }), precss, autoprefixer, bemLinter('bem'), reporter];
+    return [atImport({ addDependencyTo: webpack, plugins: [ stylelint ] }), precss, autoprefixer, reporter]
   },
 
   plugins: [
