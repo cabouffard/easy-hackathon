@@ -1,27 +1,38 @@
-/*------------------------------------*\
-    #THEME
-\*------------------------------------*/
-@import './themes/theme1.css';
-@import '../../node_modules/flexboxgrid/css/flexboxgrid.css';
+/* ------------------------------------ *\
+     #VENDORS
+\* ------------------------------------ */
+
+/* ------------------------------------ *\
+     #RESETS
+\* ------------------------------------ */
 @import './resets/button.css';
 
-/*------------------------------------*\
-    #BASE
-\*------------------------------------*/
-@import './base/body.css';
+/* ------------------------------------ *\
+     #BASE
+\* ------------------------------------ */
+/* @import './base/body.css'; */
 
-/*------------------------------------*\
-    #COMPONENTS
-\*------------------------------------*/
+/* ------------------------------------ *\
+     #THEME
+\* ------------------------------------ */
+/* @import './themes/theme1.css'; */
+/* @import './resets/button.css'; */
+
+/* ------------------------------------ *\
+     #UTILITIES
+\* ------------------------------------ */
+@import './utilities/visual.css';
+
+/* ------------------------------------ *\
+     #COMPONENTS
+\* ------------------------------------ */
 @import "./components/box.css";
-@import "./components/list.css";
-@import "./components/button.css";
+/* @import "./components/list.css"; */
+/* @import "./components/button.css"; */
 
 
-.left {
-  float: left !important;
-}
 
-.right {
-  float: right !important;
-}
+
+/* body { */
+/*   color: #4f; */
+/* } */
