@@ -13,6 +13,7 @@ var autoprefixer = require('autoprefixer');
 var bemLinter = require('postcss-bem-linter');
 var reporter = require('postcss-reporter');
 var stylelint = require("stylelint")
+var fontMagician = require("postcss-font-magician")
 
 // must match config.webpack.dev_server.port
 var devServerPort = 3808;
@@ -51,7 +52,7 @@ var config = {
     ]
   },
   postcss: function(webpack) {
-    return [atImport({ addDependencyTo: webpack, plugins: [ stylelint ] }), precss, autoprefixer, reporter({ clearMessages: true })]
+    return [atImport({ addDependencyTo: webpack, plugins: [ stylelint, fontMagician ] }), precss, autoprefixer, reporter({ clearMessages: true })]
   },
 
   plugins: [

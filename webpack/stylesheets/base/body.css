@@ -1,6 +1,7 @@
 body {
   font-size: 62.5%; /* stylelint-disable property-unit-whitelist */
   background-color: $body-bg;
+  font-family: $font-face;
 }
 
 button {

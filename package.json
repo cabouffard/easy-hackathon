@@ -16,6 +16,7 @@
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "css-loader": "^0.23.1",
+    "postcss-font-magician": "^1.4.0",
     "postcss-loader": "^0.8.2",
     "precss": "^1.4.0",
     "style-loader": "^0.13.1"
