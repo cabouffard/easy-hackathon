@@ -1,7 +1,7 @@
-= simple_form_for(@event, html: { class: 'form-group' }) do |f|
+= simple_form_for(@event, html: { class: 'form' }) do |f|
   = f.input :title
-  = f.input :introduction, as: :text, input_html: { rows: 8, maxlength: 200 }
-  = f.input :description, input_html: { class: 'redactor' }
+  = f.input :introduction, as: :text, input_html: { class: 'form__input--textarea', rows: 8, maxlength: 200 }
+  = f.input :description, input_html: { class: 'form__input--textarea redactor', rows: 8 }
   = f.input :duration, collection: duration_list
   = f.input :date, default: Date.current
   = f.button :submit
