@@ -1,16 +1,17 @@
 - if add_ability
   .team-banner--add
-    = link_to(fa_icon('plus', class: 'fa-2x'), new_event_team_path(@event), class: 'btn btn-secondary item-vertical')
+    = link_to(fa_icon('plus', class: 'fa-2x'), new_event_team_path(@event), class: 'button button--secondary')
 - @event.teams.each do |team|
-  .row.bg-secondary.vertical-spaced
-    .team-banner
-      .col-md-4
-        = render partial: 'teams/general_info', locals: { team: team }
-      .col-md-8
-        ul.list-unstyled.list-inline.text-right
-          li.vertical-spaced--small
-            = link_to(fa_icon('plus', class: 'fa-2x'), event_team_registrations_path(event_id: @event.id, team_id: team.id), method: :post, class: 'btn btn-secondary item-vertical')
-          - team.users.each do |user|
-            li.vertical-spaced--small(data={ toggle: 'tooltip', placement: 'top'} title="#{user.full_name}")
-              = image_tag(default_avatar_url(user.full_name, 50))
+  .box
+    .col-md-12
+      .row
+        .col-md-4
+          = render partial: 'teams/general_info', locals: { team: team }
+        .box__content.col-md-8
+          ul.list.list--unstyled
+            li.list__item--inline
+              = link_to(fa_icon('plus', class: 'fa-2x'), event_team_registrations_path(event_id: @event.id, team_id: team.id), method: :post, class: 'btn btn-secondary item-vertical')
+            - team.users.each do |user|
+              li.list__item--inline(data={ toggle: 'tooltip', placement: 'top'} title="#{user.full_name}")
+                = image_tag(default_avatar_url(user.full_name, 50))
 

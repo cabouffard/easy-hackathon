@@ -52,6 +52,11 @@
   max-width: 50%;
 }
 
+.col-md-8 {
+  flex-basis: 66.666%;
+  max-width: 66.666%;
+}
+
 .col-md-12 {
   flex-basis: 100%;
   max-width: 100%;

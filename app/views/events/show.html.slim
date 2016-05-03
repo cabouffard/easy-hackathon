@@ -1,19 +1,24 @@
 .row
-  h1.text-center.text-secondary= @event.title
+  .col-md-12
+    h1.text-center.text-secondary= @event.title
 
 = render partial: 'header'
 
-.col-md-6
-  .row
-    h2= t('events.description')
-    p= @event.description.html_safe
+.row
+  .col-md-6
+    .row
+      .col-md-12
+        h2= t('events.description')
+        p= @event.description.html_safe
 
-.col-md-6
-  .row
-    h2= t('events.participant_count', count: @event.participant_count)
-    = render partial: 'participant_list', locals: { add_ability: add_user_to_event }
-  .row
-    h2= t('events.team_count', count: @event.team_count)
-    .team-container
-      .row.bg-secondary.vertical-spaced
+  .col-md-6
+    .row
+      .col-md-12
+        h2= t('events.participant_count', count: @event.participant_count)
+      .col-md-12
+        = render partial: 'participant_list', locals: { add_ability: add_user_to_event }
+    .row
+      .col-md-12
+        h2= t('events.team_count', count: @event.team_count)
+      .col-md-12
         = render partial: 'team_list', locals: { add_ability: add_team_to_event }
